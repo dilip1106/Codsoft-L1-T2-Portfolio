@@ -705,4 +705,7 @@ form .submit-btn:hover{
         width: 40%;
         font-size: 13px;
     }
+    .email-phone{
+        grid-template-columns: 1fr;
+    }
 }
