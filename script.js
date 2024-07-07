@@ -1,7 +1,9 @@
 const header=document.querySelector("header");
 const form = document.querySelector(".contact-form");
+const up = document.querySelector('.scroll-top');
 window.addEventListener("scroll",function(){
     header.classList.toggle("sticky", this.window.scrollY > 130);
+    up.classList.toggle("up",this.window.scrollY > 130);
 });
 
 let menu = document.querySelector('#menu-icon');
@@ -37,6 +39,7 @@ function sendEmail(){
                         Phone Number : ${phone.value} <br>
                         Message : ${message.value}`;
 
+
     Email.send({
         Host : "smtp.elasticemail.com",
         Username : "diliptelli38@gmail.com",
@@ -51,9 +54,14 @@ function sendEmail(){
 }
 
 form.addEventListener("submit", (e)=>{
-    e.preventDefault();
-
-    sendEmail();
+    e.preventDefault(); 
+    if(fullname.value=="" || phone.value=="" || email.value=="" || message.value=="" || subject.value==""){
+      console.log("Fill all the elements");
+    }
+    else{
+      sendEmail();
+    }
+    
 })
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -79,3 +87,6 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   });
+
+
+

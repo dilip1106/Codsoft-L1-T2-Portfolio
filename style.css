@@ -346,6 +346,57 @@ header.sticky {
     border-image-slice: 1;
 }
 
+.skill{
+    background: var(--second-bg-color);
+}
+
+.skill-logo{
+    display: grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap: 2rem;
+    margin: 5rem;
+    width: 100%;
+}
+
+.skill .logo img{
+    display: block;
+    width: 100%;
+    max-width: 150px; 
+    height: 150px;
+    object-fit: cover;
+    transition: all .50s ease;
+    /* filter: drop-shadow(3px 1px 2px var(--bg-color)); */
+}
+
+.skill .logo img:hover{
+    transform: scale(1.1);
+}
+
+.edu-content{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2rem;
+    padding: 30px 60px;
+}
+.edu-info{
+    padding: 30px 60px;
+    background: var(--second-bg-color);
+    border-radius: 0.5rem;
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(135deg, #e1bac5 0%, var(--main-color) 100%);
+    border-image-slice: 1;
+    transition: all .7s ease;
+    cursor: pointer;
+}
+.edu-info h5{
+    font-size: 25px;
+}
+.edu-info p{
+    font-size: var(--p-font);
+    font-weight: 500;
+    line-height: 33px;
+    color: var(--ann-color);
+}
 .portfolio{
     background-color: var(--second-bg-color);
 }
@@ -542,6 +593,9 @@ form .submit-btn:hover{
 }
 
 .scroll-top{
+    position: fixed;
+    bottom: 2rem;
+    right: 1rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -551,6 +605,12 @@ form .submit-btn:hover{
     color: var(--bg-color);
     border-radius: 1.7rem;
     font-size: 22px;
+    opacity: 0;
+    transition: all .50s ease;
+}
+
+.scroll-top.up{
+    opacity: 1;
 }
 
 @media(max-width: 1580px){
@@ -649,6 +709,10 @@ form .submit-btn:hover{
         padding: 14px 22px;
         font-size: 15px;
     }
+    .skill-logo{
+        grid-template-columns: repeat(3,1fr);
+        margin: auto;
+    }
 }
 
 @media(max-width: 900px){
@@ -684,6 +748,15 @@ form .submit-btn:hover{
     .menulist.open{
         left: 0;
     }
+    .edu-content{
+        grid-template-columns: 1fr;
+        margin: auto;
+        padding:20px ;
+    }
+    .skill-logo{
+        grid-template-columns: repeat(2,1fr);
+        margin: auto;
+    }
 }
 
 @media(max-width: 590px){
@@ -707,5 +780,9 @@ form .submit-btn:hover{
     }
     .email-phone{
         grid-template-columns: 1fr;
+    }
+    .skill-logo{
+        grid-template-columns: 1fr;
+        margin: auto;
     }
 }
