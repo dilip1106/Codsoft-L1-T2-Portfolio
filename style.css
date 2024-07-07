@@ -57,10 +57,12 @@ header{
 
 .menulist a:hover{
     color: var(--text-color);
+    border-bottom: 3px solid white;
 }
 
 .menulist a.active{
     color: var(--text-color);
+    border-bottom: 3px solid white;
 }
 .menu-right{
     display: flex;
@@ -391,6 +393,9 @@ header.sticky {
 .edu-info h5{
     font-size: 25px;
 }
+.edu-info h6{
+    font-size: 15px;
+}
 .edu-info p{
     font-size: var(--p-font);
     font-weight: 500;
@@ -594,7 +599,7 @@ form .submit-btn:hover{
 
 .scroll-top{
     position: fixed;
-    bottom: 2rem;
+    bottom: 1.5rem;
     right: 1rem;
     display: inline-flex;
     align-items: center;
